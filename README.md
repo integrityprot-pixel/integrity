@@ -1,3 +1,6 @@
+This project follows the integrity.txt protocol  
+[![](https://img.shields.io/badge/integrity.txt-enabled-2b8a3e)]()
+
 # integrity.txt — Minimal Public Integrity Protocol
 
 integrity.txt is a simple, text-only file placed at the root of any website or project to declare public integrity commitments that are objectively verifiable by anyone. It is technology-neutral, organization-neutral, identity-neutral and fully open.
