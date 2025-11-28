@@ -1,0 +1,7 @@
+integrity: public
+tracking: none
+cookies: none
+data-use: minimal
+ai-origin: declared
+accessibility: open
+sha256:
