@@ -1,0 +1,113 @@
+INTEGRITY PROTOCOL — SPECIFICATION v0.1
+=======================================
+
+STATUS: Public Draft v0.1
+AUTHOR: Anonymous
+FILE: integrity.txt
+FORMAT: Plain text (UTF-8)
+SCOPE: Universal, verifiable transparency layer for any website or project.
+
+INTRODUCTION
+------------
+The integrity.txt protocol defines a minimal, universal and verifiable way for any project, website or entity to publish a public statement of integrity and transparency. The protocol has no owner, no central authority and no infrastructure. It is implemented by placing a single text file named integrity.txt at the root of a domain or repository.
+
+The goal is to establish a standard of verifiable, truthful and minimal commitments that any project can adopt voluntarily. All statements must be objectively checkable by any independent person.
+
+THE 7 CORE RULES
+----------------
+
+1. FILE LOCATION  
+   integrity.txt MUST be placed at the root of a domain or repository.  
+   Examples:  
+   https://example.com/integrity.txt  
+   https://raw.githubusercontent.com/user/project/main/integrity.txt
+
+2. FORMAT  
+   The file MUST be UTF-8 plain text.  
+   No HTML. No JSON. No metadata. No binary content.  
+   One declaration per line.  
+   Format:  
+   key: value
+
+3. VERIFIABILITY  
+   Every declaration MUST be objectively verifiable by an independent observer.  
+   No claims that cannot be checked.  
+   No unverifiable marketing or subjective statements.
+
+4. HASH OF THE FILE  
+   integrity.txt MUST include its own SHA-256 hash, computed on the exact file content.  
+   The line MUST be:  
+   hash: <sha256_value>  
+   Anyone MUST be able to recalculate the hash and obtain the same value.
+
+5. TRUTHFULNESS  
+   All statements MUST be correct at the time of publication.  
+   If anything becomes false due to a change in the project, the file MUST be updated.
+
+6. NO PERSONAL DATA  
+   The file MUST NOT contain names, emails, IP addresses or any personal data.  
+   The protocol is anonymous by design.
+
+7. PUBLIC ACCESS  
+   The file MUST be publicly accessible without cookies, JavaScript, login or redirection.  
+   Anyone should be able to download it directly.
+
+RECOMMENDED DECLARATIONS
+------------------------
+The following lines are optional but recommended:
+
+integrity: true  
+version: v0.1  
+updated: <ISO 8601 date>  
+source-code: <public repository URL>  
+transparency: <brief description>  
+verification: <instructions or link>  
+
+These declarations must remain verifiable.
+
+VERIFICATION GUIDE
+------------------
+Any person can verify an integrity.txt file using the steps below:
+
+1. Download the file directly from the root domain.  
+2. Compute its SHA-256 hash using any public tool.  
+3. Compare the computed hash with the hash declared in the file.  
+4. Check that all statements are observable and true.  
+5. Check that the file is UTF-8, text-only and follows the format.
+
+If all checks pass, the file is valid.
+
+VERSIONING
+----------
+Projects SHOULD update the "version" and "updated" fields when modifying the file.  
+Breaking changes SHOULD increment the major version (v1 → v2).
+
+BADGE (OPTIONAL)
+----------------
+Projects MAY display a badge in their README or site:
+
+[ integrity: verified ]
+
+This badge has no special visual requirement.  
+It simply indicates the presence of a valid integrity.txt file.
+
+SECURITY NOTES
+--------------
+- No server is required.  
+- No dependency.  
+- No blockchain.  
+- No cryptographic signature is mandatory.  
+- The SHA-256 hash provides integrity across time.  
+- Additional proofs (e.g., timestamps) MAY be used but are not part of the core protocol.
+
+PHILOSOPHY
+----------
+The protocol is based on three principles:
+
+1. SIMPLICITY — One file, one purpose, zero friction.  
+2. TRUTH — Only verifiable statements.  
+3. UNIVERSALITY — Works for any project, any language, any domain.
+
+The file is a public contract of honesty that anyone can inspect and verify.
+
+END OF SPEC v0.1
