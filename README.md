@@ -28,11 +28,11 @@ The file must declare any third-party services involved that may receive user da
 The file must declare accessibility and public availability commitments (for example: accessibility: open, availability: always-on).
 
 ### 7. Proof of Integrity
-The file must include a line using the sha256: key containing the SHA-256 hash of the file itself. Example: sha256: <sha256_value>
+The file must include a line using the sha256: key containing the SHA-256 hash of the file itself.  
+Example: sha256: <sha256_value>
 
 ## Example integrity.txt file
 
-integrity: public  
 tracking: none  
 cookies: none  
 data-use: minimal  
@@ -43,10 +43,10 @@ sha256: (SHA-256 of this file)
 ## How to Verify
 
 Anyone can verify an integrity.txt file using any SHA-256 tool. The steps are universal:
-1. Download the file from the root of the domain.
-2. Compute its SHA-256 hash using any local or online tool.
-3. Compare the computed value with the sha256: field. They must match exactly.
-4. Independently check each declaration (tracking, cookies, logs, third-parties, accessibility) through inspection or developer tools.
+1. Download the file from the root of the domain.  
+2. Compute its SHA-256 hash using any local or online tool.  
+3. Compare the computed value with the sha256: field. They must match exactly.  
+4. Independently check each declaration (tracking, cookies, data-use, third-parties, accessibility) through inspection or developer tools.  
 5. If any declaration cannot be verified, the site is non-compliant.
 
 ## Optional Tools for SHA-256 Verification
@@ -54,6 +54,16 @@ Anyone can verify an integrity.txt file using any SHA-256 tool. The steps are un
 Local tools: sha256sum, shasum -a 256, Get-FileHash  
 Online tools: https://emn178.github.io/online-tools/sha256_checksum.html, https://hash.expert, https://www.virustotal.com/gui/file-analysis  
 Automated verification (optional): https://api.timeproofs.io/api/verify?hash=<SHA256>
+
+## Related Protocols
+
+The integrity.txt protocol can be used alongside other independent, root-level public transparency standards:
+
+- authenticity.txt — declarations of human/AI origin  
+- rights.txt — declarations of usage rights and permissions  
+- explainable-ia.txt — declarations of AI explainability and model transparency
+
+These standards are independent and can be implemented separately or together.
 
 ## License
 
